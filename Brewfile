@@ -22,6 +22,7 @@ brew "bat"
 brew "trash-it"
 brew "php"
 brew "mysql"
+brew "redis"
 # Only required when adding App Store applications
 #brew "mas"
 
