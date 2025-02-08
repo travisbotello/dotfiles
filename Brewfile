@@ -45,6 +45,9 @@ cask "transmit"
 cask "keepingyouawake"
 cask "copyclip"
 
+# Media
+cask "vlc"
+
 # Development
 cask "sequel-ace"
 cask "iterm2"
