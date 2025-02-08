@@ -22,6 +22,7 @@ brew "trash-it"
 brew "php"
 brew "mysql"
 brew "redis"
+brew "composer"
 # Only required when adding App Store applications
 #brew "mas"
 
