@@ -10,22 +10,18 @@ brew "zsh-completions"
 brew "node"
 brew "coreutils"
 brew "nvm"
-brew "tree"
 brew "eza"
 brew "zoxide"
 brew "fzf"
 brew "wget"
-brew "yarn"
 brew "tldr"
-brew "mas"
 brew "gh"
 brew "terminal-notifier"
-brew "wifi-password"
 brew "speedtest"
 brew "bat"
 brew "trash-it"
-brew "youtube-dl"
-brew "watchman" # Watching files for Jest
+# Only required when adding App Store applications
+#brew "mas"
 
 # ------------------------------------------------------------------------------
 # Taps
@@ -42,32 +38,20 @@ cask "font-fira-code-nerd-font"
 cask "font-hasklug-nerd-font"
 
 # Utils
-cask "ukrainian-typographic-keyboard"
-cask "gpg-suite"
-cask "openvpn-connect"
-
-# Media
-cask "transmission"
-cask "handbrake"
-cask "vlc"
-cask "obs"
+cask "transmit"
 
 # Development
-cask "fig"
-cask "multipass"
+cask "sequel-ace"
 cask "iterm2"
 cask "visual-studio-code"
-cask "github"
 
 # Desktop applications
 cask "telegram"
 cask "google-chrome"
 cask "firefox"
 cask "brave-browser"
-cask "slack"
-cask "steam"
-cask "spotify"
-cask "notion"
+cask "microsoft-teams"
+cask "skype"
 cask "discord"
 
 # Quick Look plugins
@@ -80,10 +64,4 @@ cask "webpquicklook" # https://github.com/dchest/webp-quicklook
 # ------------------------------------------------------------------------------
 # App Store applications
 # ------------------------------------------------------------------------------
-mas "Home Assistant", id: 1099568401
-mas "Bitwarden", id: 1352778147
-mas "Spark", id: 1176895641
-mas "Unsplash Wallpapers", id: 12848638472
-mas "NordVPN", id: 905953485
-mas "The Unarchiver",  id: 425424353
-mas "Pandan", id: 1569600264
+#mas "Home Assistant", id: 1099568401
