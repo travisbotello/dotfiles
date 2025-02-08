@@ -20,6 +20,8 @@ brew "terminal-notifier"
 brew "speedtest"
 brew "bat"
 brew "trash-it"
+brew "php"
+brew "mysql"
 # Only required when adding App Store applications
 #brew "mas"
 
@@ -39,6 +41,8 @@ cask "font-hasklug-nerd-font"
 
 # Utils
 cask "transmit"
+cask "keepingyouawake"
+cask "copyclip"
 
 # Development
 cask "sequel-ace"
