@@ -45,6 +45,8 @@ cask "font-hasklug-nerd-font"
 cask "transmit"
 cask "keepingyouawake"
 cask "copyclip"
+cask "sitesucker-pro"
+cask "integrity"
 
 # Media
 cask "vlc"
