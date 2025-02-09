@@ -67,15 +67,8 @@ alias path='echo -e ${PATH//:/\\n}'
 
 # Download web page with all assets
 alias getpage='wget --no-clobber --page-requisites --html-extension --convert-links --no-host-directories --https-only'
-alias get="curl --remote-name-all --location --fail"
-
 # Download file with original filename
-alias get="curl -O -L"
-
-# Yarn
-alias ybw="yarn build:watch"
-alias yba="yarn build:all"
-alias ytw="yarn test:watch"
+alias get="curl --remote-name-all --location --fail"
 
 # Use tldr as help util
 if _exists tldr; then
