@@ -1,7 +1,3 @@
-# Amazon Q pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
-# ------------------------------------------------------------------------------
-
 #
 # ~/.zshrc
 #
@@ -23,10 +19,7 @@ set -o noclobber
 # Extend $PATH without duplicates
 _extend_path() {
   [[ -d "$1" ]] || return
-
-  if ! $( echo "$PATH" | tr ":" "\n" | grep -qx "$1" ) ; then
-    export PATH="$1:$PATH"
-  fi
+  [[ ":$PATH:" != *":$1:"* ]] && export PATH="$1:$PATH"
 }
 
 # Add custom bin to $PATH
@@ -45,33 +38,10 @@ fi
 
 # Default pager
 export PAGER='less'
-
-# less options
-less_opts=(
-  # Quit if entire file fits on first screen.
-  -FX
-  # Ignore case in searches that do not contain uppercase.
-  --ignore-case
-  # Allow ANSI colour escapes, but no other escapes.
-  --RAW-CONTROL-CHARS
-  # Quiet the terminal bell. (when trying to scroll past the end of the buffer)
-  --quiet
-  # Do not complain when we are on a dumb terminal.
-  --dumb
-)
-export LESS="${less_opts[*]}"
+export LESS="-F -X -R"
 
 # Default editor for local and remote sessions
-if [[ -n "$SSH_CONNECTION" ]]; then
-  # on the server
-  if command -v vim >/dev/null 2>&1; then
-    export EDITOR='vim'
-  else
-    export EDITOR='vi'
-  fi
-else
-  export EDITOR='vim'
-fi
+export EDITOR=$(command -v vim || command -v vi || command -v nano)
 
 # Better formatting for time command
 export TIMEFMT=$'\n================\nCPU\t%P\nuser\t%*U\nsystem\t%*S\ntotal\t%*E'
@@ -106,7 +76,7 @@ ZGEN_RESET_ON_CHANGE=(
 source "${HOME}/.zgen/zgen.zsh"
 
 # Load zgen init script
-if ! zgen saved; then
+if [[ ! -d "$HOME/.zgen" ]] || ! zgen saved; then
     echo "Creating a zgen save"
 
     zgen oh-my-zsh
@@ -118,7 +88,6 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/command-not-found
     zgen oh-my-zsh plugins/npm
     zgen oh-my-zsh plugins/yarn
-    zgen oh-my-zsh plugins/nvm
     zgen oh-my-zsh plugins/fnm
     zgen oh-my-zsh plugins/extract
     zgen oh-my-zsh plugins/ssh-agent
@@ -131,7 +100,6 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/docker
     zgen oh-my-zsh plugins/docker-compose
     zgen oh-my-zsh plugins/node
-    zgen oh-my-zsh plugins/deno
 
     # Custom plugins
     zgen load chriskempson/base16-shell
@@ -188,7 +156,7 @@ if [ -s "$HOME/.bun/_bun" ]; then
 fi
 
 # Fuzzy finder bindings
-if [ -f "$HOME/.fzf.zsh" ]; then
+if [[ -r "$HOME/.fzf.zsh" ]]; then
   source "$HOME/.fzf.zsh"
 fi
 
@@ -202,6 +170,3 @@ if [[ -f "$HOME/.zshlocal" ]]; then
 fi
 
 # ------------------------------------------------------------------------------
-
-# Amazon Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
