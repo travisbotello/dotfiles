@@ -1,4 +1,3 @@
-
 " Set to show line numbers
 set number
   
@@ -12,19 +11,20 @@ syntax on
 set history=500
 
 " :W sudo saves the file
-command W w !sudo tee % > /dev/null
+command W w !sudo tee % >/dev/null | exit
 
-" Enable wildmeny for command line completions
-" Hit <Tab> after : and see what will happen
+" Enable wildmenu for command line completions
 set wildmenu
+set wildmode=longest,list,full
 
 " Always show current position
 set ruler
-" Heigh of command bar
+
+" Height of command bar
 set cmdheight=2
 
-"A buffer becomes hidden when it is abandoned
-set hid
+" A buffer becomes hidden when it is abandoned
+set hidden
 
 " Ignore case when searching
 set ignorecase
@@ -56,16 +56,15 @@ set smarttab
 set shiftwidth=2
 set tabstop=2
 
-set ai "Auto indent
-set si "Smart indent
-set wrap "Wrap lines
+set ai " Auto indent
+set si " Smart indent
+set wrap " Wrap lines
 
 " Always show the status line
 set laststatus=2
 
- 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+set statusline=%{HasPaste()}%F%m%r%h%w\ CWD:%{getcwd()}\ Line:%l\ Column:%c
 
 " Returns true if paste mode is enabled
 function! HasPaste()
@@ -74,3 +73,13 @@ function! HasPaste()
   endif
   return ''
 endfunction
+
+" Highlight the cursor line
+set cursorline
+
+" Enable persistent undo (so undo history persists after closing Vim)
+set undofile
+set undodir=~/.vim/undodir
+
+" Enable mouse support
+set mouse=a
