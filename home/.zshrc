@@ -51,9 +51,6 @@ export TIMEFMT=$'\n================\nCPU\t%P\nuser\t%*U\nsystem\t%*S\ntotal\t%*E
 # ------------------------------------------------------------------------------
 ZSH_DISABLE_COMPFIX=true
 
-# Autoload node version when changing cwd
-zstyle ':omz:plugins:nvm' autoload true
-
 # Use passphase from macOS keychain
 if [[ "$OSTYPE" == "darwin"* ]]; then
   zstyle :omz:plugins:ssh-agent ssh-add-args --apple-load-keychain
