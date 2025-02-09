@@ -64,7 +64,7 @@
   ll = log --stat --abbrev-commit
 
   # Ignore files: append file to .gitnignore
-  ignore = !([ ! -e .gitignore ] && touch .gitignore) | echo `\n$2` >> .gitignore
+  ignore = !([ ! -e .gitignore ] && touch .gitignore) && echo "$1" >> .gitignore
 
   # Initialize, add all files and commit
   this = !git init && git add . && git commit -m 'Initial commit'
