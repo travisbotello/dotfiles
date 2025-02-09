@@ -33,8 +33,8 @@
   b = branch
   c = commit
   m = merge
-  co = checkout    # Checkout
-  cb = checkout -b # Checkout branch
+  co = switch      # Changed from checkout to switch
+  cb = switch -c   # Changed from checkout -b to switch -c
   sw = switch      # Change branch
   swc = switch -c  # Create new branch
   ap = add -p      # Patch mode for specified files
@@ -88,7 +88,7 @@
   today = diff --shortstat --since="0 day ago"
 
   # Pull data from remore and push local data
-  sync = !git pull && git push
+  sync = !git pull --rebase && git push
 
 # URL shorthands
 [url "git@github.com:"]
@@ -99,13 +99,6 @@
   insteadOf = "gst:"
   pushInsteadOf = "gist:"
   pushInsteadOf = "git://gist.github.com/" # From GIT to SSH
-
-# Add LFS commands
-[filter "lfs"]
-  required = true
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
 
 # Include local settings from .gitlocal
 # Requires Git 1.7.10
