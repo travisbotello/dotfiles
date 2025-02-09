@@ -15,7 +15,7 @@
   excludesfile = ~/.gitignore
   attributesfile = ~/.gitattributes
   ignorecase = false
-	compression = 0
+  compression = 0
 
 [push]
   default = current
@@ -25,7 +25,7 @@
   rebase = false
 
 [protocol "file"]
-	allow = always
+  allow = always
 
 [alias]
   a = add
@@ -63,8 +63,8 @@
   # Fully commits log with statistic
   ll = log --stat --abbrev-commit
 
-  # Ignore files: append file to .gitnignore
-  ignore = !([ ! -e .gitignore ] && touch .gitignore) && echo "$1" >> .gitignore
+  # Ignore files: append file to .gitignore (without duplicates)
+  ignore = !([ ! -e .gitignore ] && touch .gitignore) && grep -qxF "$1" .gitignore || echo "$1" >> .gitignore
 
   # Initialize, add all files and commit
   this = !git init && git add . && git commit -m 'Initial commit'
@@ -84,10 +84,10 @@
   # List of contributors and how many commits each person has.
   contrib = shortlog -sn
 
-  # See how many lines of code you have written today.
-  today = diff --shortstat --since="0 day ago"
+  # See how many lines of code you have written today (including unstaged changes)
+  today = !git diff --shortstat && git diff --shortstat --staged && git diff --shortstat --since="0 day ago"
 
-  # Pull data from remore and push local data
+  # Pull data from remote and push local data
   sync = !git pull --rebase && git push
 
 # URL shorthands
@@ -101,13 +101,5 @@
   pushInsteadOf = "git://gist.github.com/" # From GIT to SSH
 
 # Include local settings from .gitlocal
-# Requires Git 1.7.10
-# Setup:
-#   git config -f ~/.gitlocal user.email "your@email.com"
-#   git config -f ~/.gitlocal user.name "Name Lastname"
-# Example .gitlocal:
-# [user]
-#   name = Denys Dovhan
-#   email = denysdovhan@gmail.com
 [include]
   path = ~/.gitlocal
