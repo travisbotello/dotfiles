@@ -51,8 +51,8 @@
   develop = !git checkout develop && git pull --prune
 
   # Merge latest master/main to current branch
-  remaster = !git checkout master && git pull --rebase --prune && git checkout - && git merge master
-  remain = !git checkout main && git pull --rebase --prune && git checkout - && git merge main
+  remaster = !git checkout master && git pull --prune && git checkout - && git rebase --interactive master
+  remain = !git checkout main && git pull --prune && git checkout - && git rebase --interactive main
   
   # When doing "git git log" or some such, do not complain about "git"
   git = !git
