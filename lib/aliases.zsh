@@ -38,10 +38,15 @@ alias -- +x='chmod +x'
 alias x+='chmod +x'
 
 # Open aliases
-alias open='open_command'
-alias o='open'
-alias oo='open .'
-alias term='open -a iterm.app'
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  alias o='open'
+  alias oo='open .'
+  alias term='open -a iTerm.app'
+else
+  alias o='xdg-open'
+  alias oo='xdg-open .'
+  alias term='gnome-terminal'
+fi
 
 # Run scripts
 alias update="source $DOTFILES/scripts/update"
@@ -54,13 +59,15 @@ alias dotfiles="code $DOTFILES"
 alias reload="source $HOME/.zshrc"
 
 # My IP
-alias myip='ifconfig | sed -En "s/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p"'
+alias myip="curl -s https://ifconfig.me"
+alias mylocalip="ip -4 addr show | awk '/inet / {print \$2}' | cut -d/ -f1"
 
 # Show $PATH in readable view
 alias path='echo -e ${PATH//:/\\n}'
 
 # Download web page with all assets
-alias getpage='wget --no-clobber --page-requisites --html-extension --convert-links --no-host-directories'
+alias getpage='wget --no-clobber --page-requisites --html-extension --convert-links --no-host-directories --https-only'
+alias get="curl --remote-name-all --location --fail"
 
 # Download file with original filename
 alias get="curl -O -L"
@@ -83,6 +90,7 @@ if _exists eza; then
   unalias ls
   alias ls='eza --icons --header --git'
   alias lt='eza --icons --tree'
+  alias lsd='eza --icons --long --sort newest'
   unalias l
   alias l='ls -l'
   alias la='ls -lAh'
