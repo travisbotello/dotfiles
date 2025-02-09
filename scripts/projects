@@ -1,11 +1,35 @@
 #!/usr/bin/env bash
 
-if [ "$(uname)" != "Darwin" ]; then
-  echo "Skipping Projects scaffolding on non-MacOS platform"
+# Cross-platform Project Directory Setup
+OS=$(uname)
+
+# Skip on Windows
+if [[ "$OS" == "CYGWIN"* || "$OS" == "MINGW"* || "$OS" == "MSYS"* ]]; then
+  echo "Skipping Projects scaffolding on Windows"
   exit 0
 fi
 
-mkdir -p ~/Projects/Repos
-mkdir -p ~/Projects/Forks
-mkdir -p ~/Projects/Job
-mkdir -p ~/Projects/Playground
+# Function to create directories only if they don't exist
+create_dir() {
+  if [ ! -d "$1" ]; then
+    mkdir -p "$1"
+    echo "📁 Created $1"
+  else
+    echo "✅ $1 already exists, skipping..."
+  fi
+}
+
+# Define directories
+PROJECT_DIRS=(
+  "$HOME/Projects/Repos"
+  "$HOME/Projects/Ag"
+  "$HOME/Projects/Tds"
+  "$HOME/Projects/Playground"
+)
+
+# Loop through each directory
+for DIR in "${PROJECT_DIRS[@]}"; do
+  create_dir "$DIR"
+done
+
+echo "✅ Project directory setup complete!"
