@@ -17,20 +17,15 @@ brew "wget"
 brew "tldr"
 brew "gh"
 brew "terminal-notifier"
-brew "speedtest"
+brew "speedtest-cli"
 brew "bat"
-brew "trash-it"
+brew "trash-cli"
 brew "php"
 brew "mysql"
 brew "redis"
 brew "composer"
 # Only required when adding App Store applications
 #brew "mas"
-
-# ------------------------------------------------------------------------------
-# Taps
-# ------------------------------------------------------------------------------
-tap "homebrew/cask-fonts"
 
 # ------------------------------------------------------------------------------
 # Cask
