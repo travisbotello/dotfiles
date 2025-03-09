@@ -105,7 +105,7 @@ if [[ ! -d "$HOME/.zgen" ]] || ! zgen saved; then
     zgen load hlissner/zsh-autopair
     zgen load zsh-users/zsh-syntax-highlighting
     zgen load zsh-users/zsh-autosuggestions
-    
+
     # Files
     zgen load $DOTFILES/lib
     zgen load $DOTFILES/custom
@@ -167,3 +167,8 @@ if [[ -f "$HOME/.zshlocal" ]]; then
 fi
 
 # ------------------------------------------------------------------------------
+
+# Load personal aliases from iCloud if available
+if [[ -f "$HOME/Library/Mobile Documents/com~apple~CloudDocs/dotfiles/.zsh_aliases_personal" ]]; then
+  source "$HOME/Library/Mobile Documents/com~apple~CloudDocs/dotfiles/.zsh_aliases_personal"
+fi
