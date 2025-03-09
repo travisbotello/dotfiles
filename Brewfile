@@ -61,9 +61,15 @@ cask "telegram"
 cask "google-chrome"
 cask "firefox"
 cask "brave-browser"
-cask "microsoft-teams"
-cask "skype"
 cask "discord"
+
+# Office applications
+cask "microsoft-powerpoint"
+cask "microsoft-word"
+cask "microsoft-excel"
+cask "microsoft-teams"
+cask "onedrive"
+cask "skype"
 
 # Quick Look plugins
 cask "qlcolorcode" # https://github.com/anthonygelibert/QLColorCode
