@@ -17,20 +17,15 @@ brew "wget"
 brew "tldr"
 brew "gh"
 brew "terminal-notifier"
-brew "speedtest"
+brew "speedtest-cli"
 brew "bat"
-brew "trash-it"
+brew "trash-cli"
 brew "php"
 brew "mysql"
 brew "redis"
 brew "composer"
 # Only required when adding App Store applications
 #brew "mas"
-
-# ------------------------------------------------------------------------------
-# Taps
-# ------------------------------------------------------------------------------
-tap "homebrew/cask-fonts"
 
 # ------------------------------------------------------------------------------
 # Cask
@@ -61,9 +56,15 @@ cask "telegram"
 cask "google-chrome"
 cask "firefox"
 cask "brave-browser"
-cask "microsoft-teams"
-cask "skype"
 cask "discord"
+
+# Office applications
+cask "microsoft-powerpoint"
+cask "microsoft-word"
+cask "microsoft-excel"
+cask "microsoft-teams"
+cask "onedrive"
+cask "skype"
 
 # Quick Look plugins
 cask "qlcolorcode" # https://github.com/anthonygelibert/QLColorCode
