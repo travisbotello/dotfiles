@@ -64,6 +64,7 @@ cask "microsoft-word"
 cask "microsoft-excel"
 cask "microsoft-teams"
 cask "onedrive"
+cask "microsoft-auto-update"
 
 # Quick Look plugins
 cask "qlcolorcode" # https://github.com/anthonygelibert/QLColorCode
