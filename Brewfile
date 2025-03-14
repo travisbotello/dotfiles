@@ -42,6 +42,7 @@ cask "transmit"
 cask "keepingyouawake"
 cask "copyclip"
 cask "integrity"
+cask "teamviewer"
 
 # Media
 cask "vlc"
