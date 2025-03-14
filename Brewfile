@@ -24,6 +24,7 @@ brew "php"
 brew "mysql"
 brew "redis"
 brew "composer"
+brew "httrack"
 # Only required when adding App Store applications
 #brew "mas"
 
@@ -40,7 +41,6 @@ cask "font-hasklug-nerd-font"
 cask "transmit"
 cask "keepingyouawake"
 cask "copyclip"
-cask "sitesucker-pro"
 cask "integrity"
 
 # Media
