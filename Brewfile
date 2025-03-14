@@ -69,7 +69,6 @@ cask "onedrive"
 cask "qlcolorcode" # https://github.com/anthonygelibert/QLColorCode
 cask "qlstephen" # https://github.com/whomwah/qlstephen
 cask "quicklook-json" # https://github.com/sindresorhus/quick-look-plugins
-cask "qlimagesize" # https://github.com/Nyx0uf/qlImageSize
 cask "webpquicklook" # https://github.com/dchest/webp-quicklook
 
 # ------------------------------------------------------------------------------
