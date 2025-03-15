@@ -59,7 +59,7 @@ alias dotfiles="code $DOTFILES"
 alias reload="source $HOME/.zshrc"
 
 # My IP
-alias myip="curl -s https://ifconfig.me"
+alias myip="curl -4 -s https://ifconfig.me"
 alias mylocalip="ip -4 addr show | awk '/inet / {print \$2}' | cut -d/ -f1"
 
 # Show $PATH in readable view
