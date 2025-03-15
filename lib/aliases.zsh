@@ -49,8 +49,8 @@ else
 fi
 
 # Run scripts
-alias update="source $DOTFILES/scripts/update"
-alias bootstrap="source $DOTFILES/scripts/bootstrap"
+alias update="bash $DOTFILES/scripts/update"
+alias bootstrap="bash $DOTFILES/scripts/bootstrap"
 
 # Quick jump to dotfiles
 alias dotfiles="code $DOTFILES"
