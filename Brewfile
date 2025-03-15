@@ -26,6 +26,7 @@ brew "redis"
 brew "composer"
 brew "httrack"
 brew "direnv"
+brew "pygments"
 # Only required when adding App Store applications
 #brew "mas"
 
@@ -41,8 +42,8 @@ cask "font-hasklug-nerd-font"
 # Utils
 cask "transmit"
 cask "keepingyouawake"
-cask "copyclip"
 cask "integrity"
+cask "maccy"
 cask "teamviewer"
 cask "appcleaner"
 
