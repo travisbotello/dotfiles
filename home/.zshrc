@@ -95,8 +95,6 @@ if [[ ! -d "$HOME/.zgen" ]] || ! zgen saved; then
     zgen oh-my-zsh plugins/gh
     zgen oh-my-zsh plugins/common-aliases
     zgen oh-my-zsh plugins/direnv
-    zgen oh-my-zsh plugins/docker
-    zgen oh-my-zsh plugins/docker-compose
     zgen oh-my-zsh plugins/node
 
     # Custom plugins
@@ -132,7 +130,7 @@ fi
 # Init tools
 # ------------------------------------------------------------------------------
 
-# # Per-directory configs
+# Per-directory configs
 if command -v direnv >/dev/null 2>&1; then
   eval "$(direnv hook zsh)"
 fi
