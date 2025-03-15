@@ -44,6 +44,7 @@ cask "copyclip"
 cask "integrity"
 cask "teamviewer"
 cask "betterdisplay"
+cask "appcleaner"
 
 # Media
 cask "vlc"
