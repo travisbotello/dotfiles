@@ -43,6 +43,7 @@ cask "keepingyouawake"
 cask "copyclip"
 cask "integrity"
 cask "teamviewer"
+cask "betterdisplay"
 
 # Media
 cask "vlc"
