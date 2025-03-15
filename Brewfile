@@ -25,6 +25,7 @@ brew "mysql"
 brew "redis"
 brew "composer"
 brew "httrack"
+brew "direnv"
 # Only required when adding App Store applications
 #brew "mas"
 
