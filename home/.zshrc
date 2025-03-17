@@ -88,7 +88,6 @@ if [[ ! -d "$HOME/.zgen" ]] || ! zgen saved; then
     zgen oh-my-zsh plugins/yarn
     zgen oh-my-zsh plugins/fnm
     zgen oh-my-zsh plugins/extract
-    zgen oh-my-zsh plugins/ssh-agent
     zgen oh-my-zsh plugins/macos
     zgen oh-my-zsh plugins/vscode
     zgen oh-my-zsh plugins/gh
