@@ -27,8 +27,8 @@ alias q="~ && clear"
 [ -d ~/Downloads ]            && alias dl='cd ~/Downloads'
 [ -d ~/Desktop ]              && alias dt='cd ~/Desktop'
 [ -d ~/Projects ]             && alias pj='cd ~/Projects'
-[ -d ~/Projects/Forks ]       && alias pjf='cd ~/Projects/Forks'
-[ -d ~/Projects/Job ]         && alias pjj='cd ~/Projects/Job'
+[ -d ~/Projects/Ag ]          && alias pja='cd ~/Projects/Ag'
+[ -d ~/Projects/Tds ]         && alias pjt='cd ~/Projects/Tds'
 [ -d ~/Projects/Playground ]  && alias pjl='cd ~/Projects/Playground'
 [ -d ~/Projects/Repos ]       && alias pjr='cd ~/Projects/Repos'
 
