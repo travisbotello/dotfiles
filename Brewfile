@@ -46,6 +46,7 @@ cask "integrity"
 cask "maccy"
 cask "teamviewer"
 cask "appcleaner"
+cask "dropbox"
 
 # Media
 cask "vlc"
