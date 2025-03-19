@@ -99,7 +99,7 @@ main() {
   on_start "$*"
   update_dotfiles "$*"
   update_brew "$*"
-  update_npm "$*"  # ✅ Now updates npm globally
+  update_npm "$*"
   update_apt "$*"
   on_finish "$*"
 }
