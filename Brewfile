@@ -53,6 +53,7 @@ cask "vlc"
 cask "sequel-ace"
 cask "iterm2"
 cask "visual-studio-code"
+cask "tableplus"
 
 # Desktop applications
 cask "telegram"
