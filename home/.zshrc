@@ -138,6 +138,10 @@ if command -v zoxide >/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
 fi
 
+if command -v fnm >/dev/null 2>&1; then
+  eval "$(fnm env --use-on-cd --shell zsh)"
+fi
+
 # ------------------------------------------------------------------------------
 # Load additional zsh files
 # ------------------------------------------------------------------------------
