@@ -7,6 +7,7 @@
 brew "git"
 brew "zsh"
 brew "zsh-completions"
+brew "node"
 brew "coreutils"
 brew "fnm"
 brew "eza"
