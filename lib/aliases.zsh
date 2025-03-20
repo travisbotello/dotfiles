@@ -60,7 +60,7 @@ alias reload="source $HOME/.zshrc"
 
 # My IP
 alias myip="curl -4 -s https://ifconfig.me"
-alias mylocalip="ip -4 addr show | awk '/inet / {print \$2}' | cut -d/ -f1"
+alias mylocalip="ifconfig | awk '/inet / && !/127.0.0.1/ {print \$2}'"
 
 # Show $PATH in readable view
 alias path='echo -e ${PATH//:/\\n}'
