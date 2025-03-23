@@ -35,8 +35,10 @@ brew "docker-compose"
 
 # Fonts
 cask "font-fira-code"
+cask "font-monaspace"
 cask "font-fira-code-nerd-font"
 cask "font-hasklug-nerd-font"
+cask "font-monaspace-nerd-font"
 
 # Utils
 cask "transmit"
