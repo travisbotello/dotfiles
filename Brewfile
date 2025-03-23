@@ -33,9 +33,12 @@ brew "docker-compose"
 # Cask
 # ------------------------------------------------------------------------------
 
-# Fonts
+# VS Code Fonts
 cask "font-fira-code"
 cask "font-monaspace"
+cask "font-ibm-plex-mono"
+
+# Terminal Fonts
 cask "font-fira-code-nerd-font"
 cask "font-hasklug-nerd-font"
 cask "font-monaspace-nerd-font"
