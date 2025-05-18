@@ -26,14 +26,6 @@ brew "pygments"
 brew "colima"
 brew "docker"
 brew "docker-compose"
-# canvas related build stuff
-brew "pkg-config" 
-brew "cairo"
-brew "pango"
-brew "libpng"
-brew "jpeg"
-brew "giflib"
-brew "librsvg"
 
 # Only required when adding App Store applications
 #brew "mas"
