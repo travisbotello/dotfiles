@@ -26,6 +26,7 @@ brew "pygments"
 brew "colima"
 brew "docker"
 brew "docker-compose"
+brew "poppler"
 
 # Only required when adding App Store applications
 #brew "mas"
@@ -60,6 +61,7 @@ cask "vlc"
 cask "sequel-ace"
 cask "iterm2"
 cask "visual-studio-code"
+cask "cursor"
 cask "tableplus"
 
 # Desktop applications
