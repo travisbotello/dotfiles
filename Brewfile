@@ -82,8 +82,8 @@ cask "microsoft-auto-update"
 # Quick Look plugins
 cask "qlcolorcode" # https://github.com/anthonygelibert/QLColorCode
 cask "qlstephen" # https://github.com/whomwah/qlstephen
-cask "quicklook-json" # https://github.com/sindresorhus/quick-look-plugins
-cask "webpquicklook" # https://github.com/dchest/webp-quicklook
+# Removed: quicklook-json (macOS natively previews JSON since Catalina)
+# Removed: webpquicklook (macOS natively supports WebP since Big Sur)
 
 # ------------------------------------------------------------------------------
 # App Store applications

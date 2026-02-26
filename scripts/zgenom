@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+URL="https://github.com/jandamm/zgenom.git"
+REPO="$HOME/.zgenom"
+
+# Check if git is installed
+if ! command -v git >/dev/null 2>&1; then
+    echo "Error: Git is not installed. Cannot proceed."
+    exit 1
+fi
+
+# Migrate from zgen if needed
+if [ -d "$HOME/.zgen" ] && [ ! -d "$REPO" ]; then
+    echo "Migrating from zgen to zgenom..."
+    rm -rf "$HOME/.zgen"
+fi
+
+# Install or update zgenom
+if [ ! -d "$REPO" ]; then
+    echo "Installing zgenom..."
+    git clone "$URL" "$REPO"
+else
+    echo "Updating zgenom..."
+    cd "$REPO" || { echo "Error: Cannot access $REPO"; exit 1; }
+    git pull
+    cd - >/dev/null 2>&1
+fi
+
+echo "zgenom is ready!"

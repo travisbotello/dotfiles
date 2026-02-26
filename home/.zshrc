@@ -22,8 +22,12 @@ _extend_path() {
   [[ ":$PATH:" != *":$1:"* ]] && export PATH="$1:$PATH"
 }
 
+# Add Homebrew to $PATH (sets PREFIX, CELLAR, etc.)
+if [[ -x "/opt/homebrew/bin/brew" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # Add custom bin to $PATH
-_extend_path "/opt/homebrew/bin"
 _extend_path "$HOME/.local/bin"
 _extend_path "$DOTFILES/bin"
 _extend_path "$HOME/.npm-global/bin"
@@ -64,59 +68,59 @@ fi
 # Spaceship project directory (for local development)
 SPACESHIP_PROJECT="$HOME/Projects/Repos/spaceship/spaceship-prompt"
 
-# Reset zgen on change
+# Reset zgenom on change
 ZGEN_RESET_ON_CHANGE=(
   ${HOME}/.zshrc
   ${DOTFILES}/lib/*.zsh
 )
 
-# Load zgen
-source "${HOME}/.zgen/zgen.zsh"
+# Load zgenom
+source "${HOME}/.zgenom/zgenom.zsh"
 
-# Load zgen init script
-if [[ ! -d "$HOME/.zgen" ]] || ! zgen saved; then
-    echo "Creating a zgen save"
+# Load zgenom init script
+if ! zgenom saved; then
+    echo "Creating a zgenom save"
 
-    zgen oh-my-zsh
+    zgenom ohmyzsh
 
     # Oh-My-Zsh plugins
-    zgen oh-my-zsh plugins/git
-    zgen oh-my-zsh plugins/history-substring-search
-    zgen oh-my-zsh plugins/sudo
-    zgen oh-my-zsh plugins/command-not-found
-    zgen oh-my-zsh plugins/npm
-    zgen oh-my-zsh plugins/yarn
-    zgen oh-my-zsh plugins/fnm
-    zgen oh-my-zsh plugins/extract
-    zgen oh-my-zsh plugins/macos
-    zgen oh-my-zsh plugins/vscode
-    zgen oh-my-zsh plugins/gh
-    zgen oh-my-zsh plugins/common-aliases
-    zgen oh-my-zsh plugins/direnv
-    zgen oh-my-zsh plugins/node
+    zgenom ohmyzsh plugins/git
+    zgenom ohmyzsh plugins/history-substring-search
+    zgenom ohmyzsh plugins/sudo
+    zgenom ohmyzsh plugins/command-not-found
+    zgenom ohmyzsh plugins/npm
+    zgenom ohmyzsh plugins/yarn
+    zgenom ohmyzsh plugins/fnm
+    zgenom ohmyzsh plugins/extract
+    zgenom ohmyzsh plugins/macos
+    zgenom ohmyzsh plugins/vscode
+    zgenom ohmyzsh plugins/gh
+    zgenom ohmyzsh plugins/common-aliases
+    zgenom ohmyzsh plugins/direnv
+    zgenom ohmyzsh plugins/node
 
     # Custom plugins
-    zgen load chriskempson/base16-shell
-    zgen load djui/alias-tips
-    zgen load marzocchi/zsh-notify
-    zgen load hlissner/zsh-autopair
-    zgen load zsh-users/zsh-syntax-highlighting
-    zgen load zsh-users/zsh-autosuggestions
+    zgenom load chriskempson/base16-shell
+    zgenom load djui/alias-tips
+    zgenom load marzocchi/zsh-notify
+    zgenom load hlissner/zsh-autopair
+    zgenom load zsh-users/zsh-syntax-highlighting
+    zgenom load zsh-users/zsh-autosuggestions
 
     # Files
-    zgen load $DOTFILES/lib
-    zgen load $DOTFILES/custom
+    zgenom load $DOTFILES/lib
+    zgenom load $DOTFILES/custom
 
     # Load Spaceship prompt from remote
     if [[ ! -d "$SPACESHIP_PROJECT" ]]; then
-      zgen load spaceship-prompt/spaceship-prompt spaceship
+      zgenom load spaceship-prompt/spaceship-prompt spaceship
     fi
 
     # Completions
-    zgen load zsh-users/zsh-completions src
+    zgenom load zsh-users/zsh-completions src
 
     # Save all to init script
-    zgen save
+    zgenom save
 fi
 
 # Load Spaceship form local project

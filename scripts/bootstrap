@@ -78,7 +78,7 @@ install_npm() {
   [ "$(uname)" != "Darwin" ] && return
   if ! _exists npm; then error "npm is missing!"; return; fi
   info "Installing global npm packages..."
-  npm install -g commitizen npkill fkill-cli cz-conventional-changelog ts-node typescript
+  xargs npm install -g < "$DOTFILES/npm-globals.txt"
   finish
 }
 

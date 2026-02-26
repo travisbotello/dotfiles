@@ -24,13 +24,15 @@ alias clr='clear'
 alias q="~ && clear"
 
 # Folders Shortcuts
-[ -d ~/Downloads ]            && alias dl='cd ~/Downloads'
-[ -d ~/Desktop ]              && alias dt='cd ~/Desktop'
-[ -d ~/Projects ]             && alias pj='cd ~/Projects'
-[ -d ~/Projects/Ag ]          && alias pja='cd ~/Projects/Ag'
-[ -d ~/Projects/Tds ]         && alias pjt='cd ~/Projects/Tds'
-[ -d ~/Projects/Playground ]  && alias pjl='cd ~/Projects/Playground'
-[ -d ~/Projects/Repos ]       && alias pjr='cd ~/Projects/Repos'
+PROJECTS_DIR="$HOME/Projects"
+
+[ -d ~/Downloads ]                && alias dl='cd ~/Downloads'
+[ -d ~/Desktop ]                  && alias dt='cd ~/Desktop'
+[ -d "$PROJECTS_DIR" ]            && alias pj="cd $PROJECTS_DIR"
+[ -d "$PROJECTS_DIR/Ag" ]         && alias pja="cd $PROJECTS_DIR/Ag"
+[ -d "$PROJECTS_DIR/Tds" ]        && alias pjt="cd $PROJECTS_DIR/Tds"
+[ -d "$PROJECTS_DIR/Playground" ]  && alias pjl="cd $PROJECTS_DIR/Playground"
+[ -d "$PROJECTS_DIR/Repos" ]       && alias pjr="cd $PROJECTS_DIR/Repos"
 
 # Commands Shortcuts
 alias e="$EDITOR"
@@ -97,6 +99,9 @@ if _exists bat; then
   export BAT_THEME='base16'
   alias cat='bat'
 fi
+
+# Measure shell startup time
+alias zsh-time='time zsh -i -c exit'
 
 # cd with zsh-z capabilities
 # https://github.com/ajeetdsouza/zoxide

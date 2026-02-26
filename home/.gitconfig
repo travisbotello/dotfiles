@@ -12,7 +12,7 @@
 
 [core]
   editor = vim
-  excludesfile = ~/.gitignore
+  excludesfile = ~/.config/git/ignore
   attributesfile = ~/.gitattributes
   ignorecase = false
   compression = 0

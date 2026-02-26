@@ -11,7 +11,6 @@
       path: home/.*
       create: true
       relink: true
-      force: true
 
 - create:
     - ~/.config
@@ -20,8 +19,8 @@
     - description: Installing submodules
       command: git submodule update --init --recursive
 
-    - description: Installing zgen
-      command: ./scripts/zgen
+    - description: Installing zgenom
+      command: ./scripts/zgenom
 
     - description: Scaffolding Project folders
       command: ./scripts/projects
