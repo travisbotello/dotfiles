@@ -43,7 +43,7 @@ alias x+='chmod +x'
 if [[ "$OSTYPE" == "darwin"* ]]; then
   alias o='open'
   alias oo='open .'
-  alias term='open -a iTerm.app'
+  alias term='open -a Ghostty.app'
 else
   alias o='xdg-open'
   alias oo='xdg-open .'

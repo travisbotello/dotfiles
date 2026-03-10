@@ -16,7 +16,7 @@ brew "fzf"
 brew "wget"
 brew "tldr"
 brew "gh"
-brew "terminal-notifier"
+# Removed: terminal-notifier (was only used by zsh-notify, which doesn't support Ghostty)
 brew "speedtest-cli"
 brew "bat"
 brew "trash-cli"
@@ -59,7 +59,7 @@ cask "vlc"
 
 # Development
 cask "sequel-ace"
-cask "iterm2"
+cask "ghostty"
 cask "visual-studio-code"
 cask "cursor"
 cask "tableplus"

@@ -102,7 +102,6 @@ if ! zgenom saved; then
     # Custom plugins
     zgenom load chriskempson/base16-shell
     zgenom load djui/alias-tips
-    zgenom load marzocchi/zsh-notify
     zgenom load hlissner/zsh-autopair
     zgenom load zsh-users/zsh-syntax-highlighting
     zgenom load zsh-users/zsh-autosuggestions
