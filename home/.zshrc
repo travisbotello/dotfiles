@@ -55,6 +55,7 @@ export TIMEFMT=$'\n================\nCPU\t%P\nuser\t%*U\nsystem\t%*S\ntotal\t%*E
 # Oh My Zsh
 # ------------------------------------------------------------------------------
 ZSH_DISABLE_COMPFIX=true
+zstyle ':omz:update' mode auto  # Update silently without prompting
 
 # Use passphase from macOS keychain
 if [[ "$OSTYPE" == "darwin"* ]]; then
