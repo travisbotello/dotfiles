@@ -146,11 +146,6 @@ if command -v direnv >/dev/null 2>&1; then
   eval "$(direnv hook zsh)"
 fi
 
-# Like cd but with z-zsh capabilities
-if command -v zoxide >/dev/null 2>&1; then
-  eval "$(zoxide init zsh)"
-fi
-
 if command -v fnm >/dev/null 2>&1; then
   eval "$(fnm env --use-on-cd --shell zsh)"
 fi
@@ -185,4 +180,9 @@ fi
 # Load personal aliases from iCloud if available
 if [[ -f "$HOME/Library/Mobile Documents/com~apple~CloudDocs/dotfiles/.zsh_aliases_personal" ]]; then
   source "$HOME/Library/Mobile Documents/com~apple~CloudDocs/dotfiles/.zsh_aliases_personal"
+fi
+
+# Like cd but with z-zsh capabilities (must be last)
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
 fi
