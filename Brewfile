@@ -53,6 +53,7 @@ cask "maccy"
 cask "teamviewer"
 cask "appcleaner"
 cask "dropbox"
+cask "claude-code"
 
 # Media
 cask "vlc"
